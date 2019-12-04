@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	template="/WEB-INF/templates/Layout.xhtml">
+	
+	
+	
+	<ui:define name="titulo">Door Dev - Beta</ui:define>
+	
+	<ui:define name="corpo">
+		<div id="filebox" class="box">
+	        <h2>File browser</h2>
+	        <div class="box-content">
+	            <div id="open" class="tool-button">Open</div>
+		    <!-- <div id="browse" class="tool-button">Browse PACS</div> -->
+	            <ul id="series-selection"></ul>
+	        </div>
+    	</div>
+    	
+    	<div id="viewer" class="box">
+	        <h2>Viewer</h2>
+	        <div id="viewer-bar">
+	            <div id="view-metadata" class="tool-button">Metadata</div>
+	            <div id="test-scroll" class="tool-button">Slide through</div>
+	            <select id="clut-select">
+	                <optgroup label="CLUT">
+	                </optgroup>
+	            </select>
+	            <select id="window-presets">
+	                <optgroup label="Window presets">
+	                </optgroup>
+	            </select>
+	            <div id="button-bar-horz">
+	                <div id="butt-reset" class="tool-button">Reset</div>
+	            </div>
+	        </div>
+
+	        <div class="slider-holder">
+	            <div id="slider"></div>
+	        </div>
+	        <div id="view-area">
+	        </div>
+    	</div>
+
+		<div id="open-dialog" class="hidden" title="Open files" style="display: none;">
+	        <p>Select some files</p>
+	        <form name="selectfile">
+	            <label for="file">File</label>
+	            <input type="file" name="file" id="file" multiple="multiple"/>
+	        </form>
+    	</div>
+    	
+    	<div id="browse-dialog" class="hidden" title="Browse PACS" style="display: none;">
+	    	<form>
+		        PACS:
+		      	<div id="browse-pacs-radio"></div> 
+	    	</form>
+			<div id="studiesaccordion"></div>
+	    </div>
+	    
+	    <canvas id="secondary_canvas" width="512" height="512" style="display: none;"></canvas>
+	    
+	    <div id="metadata-dialog" class="hidden" title="Metadata" style="display: none;">
+	        <table id="metadata-table" width="100%">
+	            <thead>
+	                <tr>
+	                    <td width="15%">Tag</td>
+	                    <td width="40%">Name</td>
+	                    <td width="35%">Value</td>
+	                </tr>
+	            </thead>
+	            <tbody>
+	            </tbody>
+	        </table>
+    	</div>
+	</ui:define>
+</ui:composition>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
