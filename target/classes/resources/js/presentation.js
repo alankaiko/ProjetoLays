@@ -42,7 +42,7 @@ function fill_series_selection(series, selected_uid, painter_factory) {
         series_list.append(item);
         var painter = painter_factory(thumb_canvas.id);
         painter.init(thumb_canvas.id);
-        painter.set_cluts(ClutManager.r('Plain'), ClutManager.g('Plain'), ClutManager.b('Plain'));
+        painter.set_cluts(ClutManager.r('Normal'), ClutManager.g('Normal'), ClutManager.b('Normal'));
         painter.set_file(series[uid].files[0]);
         painter.set_windowing(40, 200);
         painter.draw_image();
@@ -102,9 +102,9 @@ function draw_thumbnail_to_canvas(file, ctx, size) {
 
             var canvas_idx = (col/step + (row/step)*size)*4;
             var rounded_intensity = Math.round(intensity);
-            imageData.data[canvas_idx] = ClutManager.r('Plain')[rounded_intensity];
-            imageData.data[canvas_idx+1] = ClutManager.g('Plain')[rounded_intensity];
-            imageData.data[canvas_idx+2] = ClutManager.b('Plain')[rounded_intensity];
+            imageData.data[canvas_idx] = ClutManager.r('Normal')[rounded_intensity];
+            imageData.data[canvas_idx+1] = ClutManager.g('Normal')[rounded_intensity];
+            imageData.data[canvas_idx+2] = ClutManager.b('Normal')[rounded_intensity];
             imageData.data[canvas_idx+3] = 0xFF;
         }
     }
@@ -123,7 +123,7 @@ function create_image_infobox(viewarea) {
     infolist.style.paddingLeft = "7px";
 
     // Create list item and two p-tags for each property
-    var attrs = [['size', 'Size'], ['ww', 'WW'], ['wl', 'WL'], ['sliceidx', 'Slice'], ['density', 'Density']];
+	var attrs = [['size', 'Exten.'], ['ww', 'Lati.'], ['wl', 'Long.'], ['sliceidx', 'Qtd.'], ['density', 'Dens.']];
     for(var idx in attrs) {
         var li = document.createElement('li');
         li.style.listStyle = 'none';

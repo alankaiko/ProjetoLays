@@ -14,6 +14,21 @@
 	</properties>
 	
 	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.webjars/font-awesome -->
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>font-awesome</artifactId>
+		    <version>4.7.0</version>
+		</dependency>
+		
+		
+		<!-- https://mvnrepository.com/artifact/org.webjars.bower/components-font-awesome -->
+		<dependency>
+		    <groupId>org.webjars.bower</groupId>
+		    <artifactId>components-font-awesome</artifactId>
+		    <version>4.7.0</version>
+		</dependency>
+		
 		<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
 		<dependency>
 		    <groupId>javax.servlet</groupId>

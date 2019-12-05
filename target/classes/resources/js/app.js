@@ -41,9 +41,9 @@ function DcmApp(viewareaid) {
     this.curr_file_idx = 0;
     // tools
     this.curr_tool = new WindowLevelTool(this);
-    this.curr_clut_r = ClutManager.r('Plain');
-    this.curr_clut_g = ClutManager.g('Plain');
-    this.curr_clut_b = ClutManager.b('Plain');
+    this.curr_clut_r = ClutManager.r('Normal');
+    this.curr_clut_g = ClutManager.g('Normal');
+    this.curr_clut_b = ClutManager.b('Normal');
 }
 
 DcmApp.prototype.load_files = function(files)

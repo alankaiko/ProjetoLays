@@ -4,6 +4,14 @@ body {
     margin: 0px
 }
 
+#painelEsquerdo{
+	width: 8%;
+}
+
+#corpogeral{
+	width: 90%;
+}
+
 .paineltitulo{
 	width: 99.5%;
 	height: 60px;
@@ -22,6 +30,7 @@ body {
 	width: 85%;
 }
 
+
 #filebox {
 	position: absolute;
     height: auto;
@@ -30,7 +39,6 @@ body {
     left: 0;
     width: 13%;
     float: left;;
-
 }
 
 #viewer {
@@ -47,7 +55,7 @@ body {
     margin: 10px;
     background: none repeat scroll 0 0 #F5F5F5;
     border: 1px solid #AAAAAA;
-    border-radius: 5px 5px 5px 5px;
+    border-radius: 1px 1px 1px 1px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
 }
 
@@ -60,6 +68,9 @@ body {
     width: 180px;
 }
 
+#clut-select {
+	font-size: 18px;
+}
 
 #button-bar-horz > .tool-button:first-child {
     border-radius: 4px 0px 0px 4px;
@@ -74,6 +85,7 @@ body {
 }
 #button-bar-horz > .tool-button {
     margin-left: 0px;
+    margin-right: 5px;
 }
 
 #button-bar-vert {
@@ -94,10 +106,6 @@ body {
 }
 
 .tool-button { 
-    float:left;
-    background: -moz-linear-gradient(top, #ccc 40%, #eee 60%);
-    border: 1px solid #aaa;
-    border-radius: 2px 2px 2px 2px;
     width: 90px;
     height: 20px;
     font-size: 12px;
@@ -106,16 +114,27 @@ body {
     font-weight: bold;
     margin-left: 5px;
     margin-top: 2px;
+    background-color: #628292;
+    color: #ffffff;
+    border: 1px solid #628292;
+    font-size: 14px;
+    margin: 0;
+    outline: 0 none;
+    -moz-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+    -webkit-transition: background-color 0.3s;
+    transition: background-color 0.3s;
 }
 
 .tool-button:hover { 
     background: #fff;
     cursor: pointer;
-
+	color: #000;
 }
 
 .butt-selected {
     background: #fff;
+    color: #000;
 }
 
 .slider-holder {
@@ -190,6 +209,7 @@ tr.even {
 
 #series-selection {
     min-height: 200px;
+    height: 300px;
     border: 1px solid #aaa;
     list-style:none;
     padding: 0px;
@@ -228,17 +248,16 @@ tr.even {
 
 .box h2 {
     -moz-border-bottom-colors: none;
-    background: -moz-linear-gradient(center top , #1B76FF, #2C1DFF) repeat scroll 0 0 transparent;
-    background: -webkit-linear-gradient(#1B76FF, #2C1DFF) repeat scroll 0 0 transparent;
+    background-color: #002400;
     border-color: #677C89 #677C89 #6B808D;
-    border-radius: 5px 5px 0 0;
+    border-radius: 1px 2px 0 0;
     border-style: solid;
     border-width: 1px;
     color: #FFFFFF;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: bold;
     margin: 0;
-    padding: 3px 13px;
+    padding: 1px 15px;
     position: relative;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.7);
 }
