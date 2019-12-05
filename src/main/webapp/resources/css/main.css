@@ -4,23 +4,43 @@ body {
     margin: 0px
 }
 
+.paineltitulo{
+	width: 99.5%;
+	height: 60px;
+	margin: 0 auto;
+	margin-top: 5px;
+}
+
+.painelconteudo {
+	width: 99.5%;
+	height: auto;
+	margin: 0 auto;
+	top: 10px;
+}
+
+#tabvi {
+	width: 85%;
+}
+
 #filebox {
-    position: absolute;
+	position: absolute;
     height: auto;
     bottom: 0;
-    top: 0;
+    top: 65px;
     left: 0;
-    width: 173px;
+    width: 13%;
+    float: left;;
 
 }
 
 #viewer {
-    position: absolute;
+	position: absolute;
+    width: 85%;
     height: auto;
     left: 180px;
     bottom: 0;
-    top: 0;
-    right: 0px;
+    top: 65px;
+    
 }
 
 .box {
@@ -195,18 +215,21 @@ tr.even {
     box-shadow: 0 0 8px;
 }
 
+
+
 #view-area {
     position: absolute;
     bottom: 10px;
     left: 10px;
     right: 10px;
     top: 70px;
+    height: 450px;
 }
 
 .box h2 {
     -moz-border-bottom-colors: none;
-    background: -moz-linear-gradient(center top , #829AA8, #405A6A) repeat scroll 0 0 transparent;
-    background: -webkit-linear-gradient(#829AA8, #405A6A) repeat scroll 0 0 transparent;
+    background: -moz-linear-gradient(center top , #1B76FF, #2C1DFF) repeat scroll 0 0 transparent;
+    background: -webkit-linear-gradient(#1B76FF, #2C1DFF) repeat scroll 0 0 transparent;
     border-color: #677C89 #677C89 #6B808D;
     border-radius: 5px 5px 0 0;
     border-style: solid;
