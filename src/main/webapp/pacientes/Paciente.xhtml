@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	template="/WEB-INF/templates/LayoutCadastro.xhtml">
+	
+	
+	<f:metadata>	
+		<f:viewAction action="#{MBCadPaciente.Inicializar}"/>
+		<f:viewParam name="editaPaciente" value="#{MBCadPaciente.id}"/>
+		<f:event listener="#{MBCadPaciente.CarregarPacienteEditar}" type="preRenderView"/>
+	</f:metadata>
+	
+	
+	<ui:define name="titulo">Cadastrar Pacientes</ui:define>
+
+	<ui:define name="corpo">
+		<h:form id="formulario">
+			<p:messages autoUpdate="true" closable="true" />
+			
+			<div class="layout-content">
+				<div class="conteudo-principal">
+					<div>
+						<p:toolbar>
+				            <p:toolbarGroup>
+				                <p:button value="Novo" icon="fa fa-fw fa-plus" outcome="/pacientes/Paciente"/>
+				                <p:commandButton value="Salvar" ajax="false" icon="fa fa-fw fa-save" 
+				                action="#{MBCadPaciente.Salvando}" actionListener="#{MBCadPaciente.Redirecionar}"/>  
+					        </p:toolbarGroup>
+				            
+				            <p:toolbarGroup align="right">
+				            	<p:button value="Guia Consulta" icon="fa fa-fw fa-pencil"
+				            		rendered="#{MBCadPaciente.paciente.id != null}">
+				            		
+				            		<f:param name="agendaPaciente" value="#{MBCadPaciente.paciente}"/>
+				            	</p:button>
+				            	<p:button value="Histórico" icon="fa fa-fw fa-history" outcome="/historicos/HistoricoPaciente" 
+				            		rendered="#{MBCadPaciente.paciente.id != null}"/>
+					            <p:button value="Pesquisar" icon="fa fa-fw fa-search" outcome="/pacientes/GerenciarPacientes"/>
+					        </p:toolbarGroup>
+			   			</p:toolbar>  
+					</div>
+				
+					<div style="margin-top: 10px;">
+						<div class="divisoriaCad">
+							<div class="divisoriaTitulo">
+								<span class="fa fa-fw fa-file-text"></span>
+								<span>DADOS GERAIS</span>
+							</div>
+							
+							<div class="divisoriaa">
+								<section class="divEsquerda">									
+									<section>
+										<div style="width:70%;">
+											<div style="border-bottom: 1px solid #eeeeee;">
+												<p:outputLabel value="Nome do Paciente"/>
+											</div>											
+	
+											<div style="margin-top: 5px;">
+												<p:inputText class="textoMenor" value="#{MBCadPaciente.paciente.id}" readonly="true"/>
+												<p:inputText class="textoMaior" value="#{MBCadPaciente.paciente.nome}" required="true"
+													requiredMessage="Digite um Paciente"/>
+											</div>											
+										</div>
+										
+										<div style="width: 30%;">
+											<div style="border-bottom: 1px solid #eeeeee;">
+												<p:outputLabel value="Data Cadastro"/>
+											</div>
+											
+											<div style="margin-top: 5px;">
+												<p:calendar style="float:right;width: 105%;" value="#{MBCadPaciente.paciente.dataCad}"
+													readonly="true" showOn="none" pattern="MM/yyyy"/>
+											</div>
+										</div>
+									</section>
+									
+									<section>
+										<div style="width:25%;">
+											<div style="border-bottom: 1px solid #eeeeee;">
+												<p:outputLabel value="CPF"/>
+											</div>										
+	
+											<div style="margin-top: 5px;">
+												<p:inputMask value="#{MBCadPaciente.paciente.cpf}"
+													required="true" requiredMessage="Digite o CPF" mask="999.999.999-99"/>	
+											</div>										
+										</div>
+										
+										<div style="width:25%;">
+											<div style="border-bottom: 1px solid #eeeeee;">
+												<p:outputLabel value="RG"/>
+											</div>												
+	
+											<div style="margin-top: 5px;">
+												<p:inputMask mask="9?9999999" value="#{MBCadPaciente.paciente.rg}"
+													required="true" requiredMessage="Digite o RG"/>	
+											</div>											
+										</div>
+										
+										<div style="width:20%;">
+											<div style="border-bottom: 1px solid #eeeeee;">
+												<p:outputLabel value="Data Nascimento"/>
+											</div>										
+	
+											<div style="margin-top: 5px;">
+												<p:calendar value="#{MBCadPaciente.paciente.dataNasc}" style="width: 105%;"  
+												navigator="true" yearRange="c-80:c+0" pattern="dd/MM/yyyy"/>		
+											</div>											
+										</div>
+										
+	
+									</section>
+									
+									<section>
+		
+										
+										<div style="width: 50%;">
+											<div style="border-bottom: 1px solid #eeeeee;">
+												<p:outputLabel value="Religião"/>
+											</div>
+											
+											<div style="margin-top: 5px;">
+												<p:inputText value="#{MBCadPaciente.paciente.religiao}"/>
+											</div>
+										</div>
+					
+									</section>
+									
+									<section>
+										<div style="width:25%;">
+											<div style="border-bottom: 1px solid #eeeeee;">
+												<p:outputLabel value="Naturalidade"/>
+											</div>											
+	
+											<div style="margin-top: 5px;">
+												<p:inputText value="#{MBCadPaciente.paciente.naturalidade}"/>
+											</div>											
+										</div>
+										
+										<div style="width: 25%;">
+											<div style="border-bottom: 1px solid #eeeeee;">
+												<p:outputLabel value="Procedência"/>
+											</div>
+											
+											<div style="margin-top: 5px;">
+												<p:inputText value="#{MBCadPaciente.paciente.procedencia}"/>
+											</div>
+										</div>
+										
+										<div style="width: 20%;">
+											<div style="border-bottom: 1px solid #eeeeee;">
+												<p:outputLabel value="Profissão"/>
+											</div>
+											
+											<div style="margin-top: 5px;">
+												<p:inputText value="#{MBCadPaciente.paciente.profissao}"/>
+											</div>
+										</div>
+									
+									</section>
+								</section>
+								
+								<section class="imagens">								
+									<div>
+										<h:graphicImage library="images" name="businessman.png" alt=""/>
+										<p:fileUpload id="botaoUpload" mode="simple" label="Escolher" disabled="true" style="border:none;"/>
+									</div>
+								</section>
+							</div>							
+						</div>
+						
+						<div class="divisoriaCad">
+							<div class="divisoriaTitulo">
+								<span class="fa fa-fw fa-bars"></span>
+								<span>CONTATO E ENDEREÇO</span>
+							</div>
+							
+							<div class="divisoriaa">
+								<section class="divOutrasInformacoes">	
+									<section>								
+										<div style="width:40%;">
+											<div style="border-bottom: 1px solid #eeeeee;">
+												<p:outputLabel value="Email"/>
+											</div>											
+	
+											<div style="margin-top: 5px;">
+												<p:inputText value="#{MBCadPaciente.paciente.contato.email}"/>
+											</div>											
+										</div>
+										
+										<div style="width: 20%;">
+											<div style="border-bottom: 1px solid #eeeeee;">
+												<p:outputLabel value="Celular"/>
+											</div>
+											
+											<div style="margin-top: 5px;">
+												<p:inputMask mask="(99) 9 9999-9999" value="#{MBCadPaciente.paciente.contato.celular}"/>
+											</div>
+										</div>
+										
+										<div style="width: 20%;">
+											<div style="border-bottom: 1px solid #eeeeee;">
+												<p:outputLabel value="Telefone"/>
+											</div>
+											
+											<div style="margin-top: 5px;">
+												<p:inputMask mask="(99) 9999-9999" value="#{MBCadPaciente.paciente.contato.telefone}"/>
+											</div>
+										</div>
+										
+										<div style="width: 20%;">
+											<div style="border-bottom: 1px solid #eeeeee;">
+												<p:outputLabel value="Telefone 2"/>
+											</div>
+											
+											<div style="margin-top: 5px;">
+												<p:inputMask mask="(99) 9999-9999" value="#{MBCadPaciente.paciente.contato.telefone2}"/>
+											</div>
+										</div>
+									</section>
+									
+									<p:separator/>
+									
+									<section>								
+										<div style="width:20%;">
+											<div style="border-bottom: 1px solid #eeeeee;">
+												<p:outputLabel value="CEP"/>									
+											</div>											
+	
+											<div style="margin-top: 5px;">
+												<p:inputMask mask="99.999-999" value="#{MBCadPaciente.paciente.endereco.cep}"/>
+											</div>											
+										</div>
+										
+										<div style="width: 35%;">
+											<div style="border-bottom: 1px solid #eeeeee;">
+												<p:outputLabel value="Cidade"/>
+											</div>
+											
+											<div style="margin-top: 5px;">
+												<p:inputText value="#{MBCadPaciente.paciente.endereco.cidade}"/>
+											</div>
+										</div>
+										
+										<div style="width: 30%;">
+											<div style="border-bottom: 1px solid #eeeeee;">
+												<p:outputLabel value="Estado"/>
+											</div>
+											
+											<div style="margin-top: 5px;">
+												<p:selectOneMenu value="#{MBCadPaciente.paciente.endereco.estado}" >
+													<f:selectItems value="#{MBCadPaciente.listaEstados}"/>
+												</p:selectOneMenu>
+											</div>
+										</div>
+										
+										<div style="width:15%;">
+											<div style="border-bottom: 1px solid #eeeeee;">
+												<p:outputLabel value="Número"/>	
+								
+											</div>											
+	
+											<div style="margin-top: 5px;">
+												<p:inputMask mask="9?9999999" value="#{MBCadPaciente.paciente.endereco.numero}"/>
+											</div>											
+										</div>
+									</section>		
+									
+									<section>								
+										<div style="width:40%;">
+											<div style="border-bottom: 1px solid #eeeeee;">
+												<p:outputLabel value="Logradouro"/>
+											</div>											
+	
+											<div style="margin-top: 5px;">
+												<p:inputText value="#{MBCadPaciente.paciente.endereco.logradouro}"/>	
+											</div>	
+										</div>
+										
+										<div style="width:40%;">
+											<div style="border-bottom: 1px solid #eeeeee;">
+												<p:outputLabel value="Complemento"/>
+											</div>											
+	
+											<div style="margin-top: 5px;">
+												<p:inputText value="#{MBCadPaciente.paciente.endereco.complemento}"/>	
+											</div>	
+										</div>
+										
+										<div style="width: 20%;">
+											<div style="border-bottom: 1px solid #eeeeee;">
+												<p:outputLabel value="Bairro"/>
+											</div>
+											
+											<div style="margin-top: 5px;">
+												<p:inputText value="#{MBCadPaciente.paciente.endereco.bairro}"/>
+											</div>
+										</div>
+									</section>	
+								</section>
+							</div>							
+						</div>
+						
+						
+						<h:panelGroup id="painelconvenio">
+						<div class="divisoriaCad">
+							<div class="divisoriaTitulo">
+								<span class="fa fa-fw fa-bars"></span>
+								<span>CONVÊNIO E PLANO</span>
+							</div>
+							
+							<p:growl id="msgs" showDetail="true" life="2500"/>
+							
+							<div class="divisoriaa">
+								<section class="divOutrasInformacoes">									
+									<p:panel id="painelBo">
+										<div style="width: 20%;">
+											<div style="border-bottom: 1px solid #eeeeee;">
+												<p:outputLabel value="Convênio"/>
+											</div>
+										</div>
+				
+	
+									</p:panel>
+									
+									<section>
+										<div>
+											<div>
+												<p:commandButton value="Salvar" update=":formulario:painelconvenio"
+													action="#{MBCadPaciente.SalvarCarteira}" process=":formulario:painelconvenio"/>
+											</div>
+										</div>
+									</section>
+									
+								</section>
+							</div>							
+						</div>
+						</h:panelGroup>
+						
+						<div class="divisoriaCad">
+							<div class="divisoriaTitulo">
+								<span class="fa fa-fw fa-bars"></span>
+								<span>INFORMAÇÕES ADICIONAIS</span>
+							</div>
+								
+						</div>
+					</div>
+				</div>
+			</div>
+		</h:form>
+		
+	</ui:define>
+</ui:composition>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
