@@ -28,16 +28,17 @@
         <property name="show_sql">false</property>
 
         <!-- Drop and re-create the database schema on startup -->
-        <property name="hbm2ddl.auto">create</property>
+        <property name="hbm2ddl.auto">update</property>
         	
         <property name="hibernate.temp.use_jdbc_metadata_defaults">false</property>
 		
-      	<mapping class="br.com.clinica.domain.Endereco"/>
+      	<mapping class="br.com.clinica.domain.Endereco_cli"/>
+      	<mapping class="br.com.clinica.domain.Endereco_fun"/>
       	<mapping class="br.com.clinica.domain.Funcionario"/>
       	<mapping class="br.com.clinica.domain.Paciente"/>
       	<mapping class="br.com.clinica.domain.Usuario"/>
-      	<mapping class="br.com.clinica.domain.Contato"/>
-      	
+      	<mapping class="br.com.clinica.domain.Contato_cli"/>
+      	<mapping class="br.com.clinica.domain.Contato_fun"/>
     </session-factory>
 
 </hibernate-configuration>

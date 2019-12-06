@@ -7,14 +7,12 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	template="/WEB-INF/templates/Layout.xhtml">
 	
-	
-	
-	<ui:define name="titulo">Door Dev - Beta</ui:define>
-	
+	<ui:define name="titulo">Dicom Teste</ui:define>
+
 	<ui:define name="corpo">
 		<div class="paineltitulo">
 			<div class="box">
-				<h2>Viewer</h2>
+				<h2>Visualizar	</h2>
 		        <div id="viewer-bar">
 		        <div style="float:left; margin: 5px">
 		        	<div id="open" class="tool-button">Selecionar</div>
@@ -30,17 +28,13 @@
 		            <div style="margin-left: 5px;">
 		                <div id="butt-reset" class="tool-button">Padrão</div>
 		            </div>
-		        </div>
-		        	
-		        
-		        	
+		        </div>	
 		        </div>
 			</div>
 		</div>
 		
 		<div class="painelconteudo">
 			<div id="filebox" class="box">
-		        <h2>Painel</h2>
 		        <div class="box-content">
 			    <!-- <div id="browse" class="tool-button">Browse PACS</div> -->
 		            <ul id="series-selection"></ul>
@@ -49,7 +43,6 @@
 	    	
 	    	<div id="tabvi">
 	    		<div id="viewer" class="box">
-		    		<h2>Visualizar</h2>
 		    		<p:tabView styleClass="width: 95%;">
 						<p:tab title="Painel">
 							<div id="view-area"></div>
@@ -87,21 +80,5 @@
 	        </form>
     	</div>
     	
-    	
 	</ui:define>
 </ui:composition>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

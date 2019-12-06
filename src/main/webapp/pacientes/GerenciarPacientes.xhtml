@@ -50,13 +50,7 @@
 						<p:column headerText="Cidade" style="width: 18%;">
 							<h:outputText value="#{lista.endereco.cidade}"/>
 						</p:column>
-						
-						<p:column headerText="Histórico" style="text-align: center; width: 5%">
-							<p:button title="Histórico" icon="fa fa-fw fa-history" outcome="/historicos/HistoricoPaciente">
-								<f:param name="editaPaciente" value="#{lista.id}"/>
-							</p:button>
-						</p:column>
-						
+					
 						<p:column headerText="Opções" id="colunaExcluir" style="text-align: center; width: 8%">
 							<p:button icon="fa fa-fw fa-edit" title="Editar" outcome="/pacientes/Paciente">
 								<f:param name="editaPaciente" value="#{lista.id}"/>

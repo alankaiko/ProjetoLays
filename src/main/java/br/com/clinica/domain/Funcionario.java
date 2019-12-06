@@ -20,8 +20,7 @@ import javax.persistence.Table;
 		@NamedQuery(name = "Funcionario.listar", query = "SELECT funcionario FROM Funcionario funcionario order by id"),
 		@NamedQuery(name = "Funcionario.buscarPorId", query = "SELECT funcionario FROM Funcionario funcionario WHERE funcionario.id= :id"),
 		@NamedQuery(name = "Funcionario.buscarNome", query = "SELECT funcionario FROM Funcionario funcionario WHERE funcionario.nome= :nome"),
-		@NamedQuery(name = "Funcionario.buscarPeloNome", query = "SELECT funcionario FROM Funcionario funcionario WHERE funcionario.nome LIKE :nome"),
-		@NamedQuery(name = "Funcionario.buscarCrm", query = "SELECT funcionario FROM Funcionario funcionario WHERE funcionario.registroCoren.coren= :coren") })
+		@NamedQuery(name = "Funcionario.buscarPeloNome", query = "SELECT funcionario FROM Funcionario funcionario WHERE funcionario.nome LIKE :nome") })
 public class Funcionario implements Serializable {
 	private static final long serialVersionUID = 1L;
 

@@ -37,8 +37,7 @@
 				            		
 				            		<f:param name="agendaPaciente" value="#{MBCadPaciente.paciente}"/>
 				            	</p:button>
-				            	<p:button value="Histórico" icon="fa fa-fw fa-history" outcome="/historicos/HistoricoPaciente" 
-				            		rendered="#{MBCadPaciente.paciente.id != null}"/>
+				            	
 					            <p:button value="Pesquisar" icon="fa fa-fw fa-search" outcome="/pacientes/GerenciarPacientes"/>
 					        </p:toolbarGroup>
 			   			</p:toolbar>  
@@ -306,48 +305,7 @@
 						</div>
 						
 						
-						<h:panelGroup id="painelconvenio">
-						<div class="divisoriaCad">
-							<div class="divisoriaTitulo">
-								<span class="fa fa-fw fa-bars"></span>
-								<span>CONVÊNIO E PLANO</span>
-							</div>
-							
-							<p:growl id="msgs" showDetail="true" life="2500"/>
-							
-							<div class="divisoriaa">
-								<section class="divOutrasInformacoes">									
-									<p:panel id="painelBo">
-										<div style="width: 20%;">
-											<div style="border-bottom: 1px solid #eeeeee;">
-												<p:outputLabel value="Convênio"/>
-											</div>
-										</div>
-				
-	
-									</p:panel>
-									
-									<section>
-										<div>
-											<div>
-												<p:commandButton value="Salvar" update=":formulario:painelconvenio"
-													action="#{MBCadPaciente.SalvarCarteira}" process=":formulario:painelconvenio"/>
-											</div>
-										</div>
-									</section>
-									
-								</section>
-							</div>							
-						</div>
-						</h:panelGroup>
 						
-						<div class="divisoriaCad">
-							<div class="divisoriaTitulo">
-								<span class="fa fa-fw fa-bars"></span>
-								<span>INFORMAÇÕES ADICIONAIS</span>
-							</div>
-								
-						</div>
 					</div>
 				</div>
 			</div>

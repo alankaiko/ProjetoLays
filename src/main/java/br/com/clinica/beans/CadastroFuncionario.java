@@ -27,7 +27,7 @@ public class CadastroFuncionario {
 	
 	public void Redirecionar(){
 		try {
-			FacesContext.getCurrentInstance().getExternalContext().redirect("/ProjetoGASWeb/funcionarios/GerenciarFuncionarios.xhtml");
+			FacesContext.getCurrentInstance().getExternalContext().redirect("/ProjetoLays/funcionarios/GerenciarFuncionarios.xhtml");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

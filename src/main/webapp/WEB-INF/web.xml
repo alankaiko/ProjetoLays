@@ -11,13 +11,14 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>Faces Servlet</servlet-name>
-    <url-pattern>/faces/*</url-pattern>
+    <url-pattern>*.xhtml</url-pattern>
   </servlet-mapping>
   
 	
 	<context-param>
 		<param-name>primefaces.THEME</param-name>
-		<param-value>start</param-value>
+		<param-value>bluesky</param-value>
+		<!-- delta ou bluesky ou flick ou bootstrap -->
 	</context-param>
 	
 	<session-config>
@@ -27,4 +28,18 @@
 	<welcome-file-list>
 		<welcome-file>Home.xhtml</welcome-file>
 	</welcome-file-list>
+	
+	<error-page>
+		<exception-type>java.lang.Throwable</exception-type>
+		<location>/Erro.xhtml</location>
+	</error-page>
+	
+	<context-param>
+		<param-name>primefaces.FONT_AWESOME</param-name>
+		<param-value>true</param-value>
+	</context-param>
+	
+	<listener>
+		<listener-class>br.com.clinica.util.ContextListener</listener-class>
+	</listener>
 </web-app>

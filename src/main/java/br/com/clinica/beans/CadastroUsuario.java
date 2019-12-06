@@ -33,7 +33,7 @@ public class CadastroUsuario{
 	
 	public void Redirecionar(){
 		try {
-			FacesContext.getCurrentInstance().getExternalContext().redirect("/ProjetoGASWeb/usuarios/GerenciarUsuarios.xhtml");
+			FacesContext.getCurrentInstance().getExternalContext().redirect("/ProjetoLays/usuarios/GerenciarUsuarios.xhtml");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

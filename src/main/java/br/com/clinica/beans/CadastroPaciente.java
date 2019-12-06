@@ -31,7 +31,7 @@ public class CadastroPaciente {
 	
 	public void Redirecionar(){
 		try {
-			FacesContext.getCurrentInstance().getExternalContext().redirect("/ProjetoGASWeb/pacientes/GerenciarPacientes.xhtml");
+			FacesContext.getCurrentInstance().getExternalContext().redirect("/ProjetoLays/pacientes/GerenciarPacientes.xhtml");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

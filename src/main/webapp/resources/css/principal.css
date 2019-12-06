@@ -16,14 +16,13 @@ body {
 	width: 99.5%;
 	height: 60px;
 	margin: 0 auto;
-	margin-top: 5px;
+	margin-top: 65px;
 }
 
 .painelconteudo {
 	width: 99.5%;
 	height: auto;
 	margin: 0 auto;
-	top: 10px;
 }
 
 #tabvi {
@@ -35,7 +34,7 @@ body {
 	position: absolute;
     height: auto;
     bottom: 0;
-    top: 65px;
+    top: 120px;
     left: 0;
     width: 13%;
     float: left;;
@@ -47,7 +46,7 @@ body {
     height: auto;
     left: 180px;
     bottom: 0;
-    top: 65px;
+    top: 120px;
     
 }
 

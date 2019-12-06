@@ -35,11 +35,25 @@
 		<h:outputScript library="js" name="qr.js"/>
 		<h:outputScript library="js" name="princ.js"/>
 		
+		<h:outputScript library="js" name="validadores.js"/>
+		<h:outputScript library="js" name="layout.js"/>
+		<h:outputStylesheet library="css" name="sistema.css" />		
 		<h:outputStylesheet library="css" name="principal.css" />		
+		
 	</h:head>
 	
-	<h:body>		
-		<ui:insert name="corpo"/>
+	<h:body>
+		<div class="layout-wrapper">
+			<div id="menuInicial">
+				<ui:include src="/WEB-INF/menu/menu.xhtml"/>
+			</div>
+			
+			<div>				
+				<ui:insert name="corpo"/>
+			</div>
+			
+		</div>		
+		
 	</h:body>
 </html>
 

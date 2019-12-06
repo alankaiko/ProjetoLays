@@ -16,9 +16,8 @@
 				</div>
 				
 				<div id="menuTitulo">
-					<a href="/ProjetoGASWeb/Home.xhtml">
+					<a href="/ProjetoLays/Home.xhtml">
 						<span>Projeto Dicom - Beta</span>
-						<p:outputLabel id="deussejalouvado" value="Deus seja Louvado!"/>
 					</a>
 					
 				</div>
@@ -38,6 +37,10 @@
 						<p:submenu label="Usuários">
 							<p:menuitem value="Gerenciar Usuários" outcome="/usuarios/GerenciarUsuarios"/>
 							<p:menuitem value="Cadastro de Usuários" outcome="/usuarios/Usuario"/>
+						</p:submenu>
+						
+						<p:submenu label="Dicom">
+							<p:menuitem value="Dicom Teste" outcome="/Dicom" id="botaodicom"/>
 						</p:submenu>
 					
 						<p:menuitem value="Sair" url="/logout" />
