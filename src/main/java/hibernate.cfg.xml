@@ -39,6 +39,7 @@
       	<mapping class="br.com.clinica.domain.Usuario"/>
       	<mapping class="br.com.clinica.domain.Contato_cli"/>
       	<mapping class="br.com.clinica.domain.Contato_fun"/>
+      	<mapping class="br.com.clinica.domain.DicomServidor"/>
     </session-factory>
 
 </hibernate-configuration>

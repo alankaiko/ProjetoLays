@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	template="/WEB-INF/templates/LayoutCadastro.xhtml">
+	
+	<f:metadata>	
+		<f:viewAction action="#{ServerBean.Inicializar}"/>
+		<f:viewParam name="editaFuncionario" value="#{ServerBean.id}"/>
+		<f:event listener="#{ServerBean.CarregarServidorEditar}" type="preRenderView"/>
+	</f:metadata>
+	
+	<ui:define name="titulo">Cadastrar Funcionários</ui:define>
+
+	<ui:define name="corpo">
+		<h:form id="formulario">
+			<p:messages autoUpdate="true" closable="true" />
+			
+			<div class="layout-content">
+				<div class="conteudo-principal">
+					<div>
+						<p:toolbar>
+				            <p:toolbarGroup>
+				                <p:button value="Novo" icon="fa fa-fw fa-plus" outcome="/dicons/OpcoesServer"/>
+				                <p:commandButton value="Salvar" ajax="false" icon="fa fa-fw fa-save" 
+				                action="#{ServerBean.Salvando}" actionListener="#{ServerBean.Redirecionar}"/>  
+					        </p:toolbarGroup>
+				            
+				            <p:toolbarGroup align="right">
+					            <p:button value="Pesquisar" icon="fa fa-fw fa-search" outcome="/dicons/GerenciarServers"/>
+					        </p:toolbarGroup>
+			   			</p:toolbar>  
+			   			
+			   			<div style="margin-top: 10px;">
+							<div class="divisoriaCad">						
+								<div class="divisoriaTitulo">
+									<span class="fa fa-fw fa-file-text"></span>
+									<span>CADASTRAR SERVIDOR</span>
+								</div>
+								
+								<div class="divisoriaa">
+									<section class="divEsquerda">															
+										<section>
+											<div style="width: 30%;">
+												<div style="border-bottom: 1px solid #eeeeee;">
+													<p:outputLabel value="Título"/>								
+												</div>
+												
+												<div style="margin-top: 5px;">
+													<p:inputText value="#{ServerBean.servidor.titulo}" required="true"/>
+												</div>
+											</div>
+											
+											<div style="width:90%;">
+												<div style="border-bottom: 1px solid #eeeeee;">
+													<p:outputLabel value="Hostname e Porta"/>
+												</div>											
+		
+												<div style="margin-top: 5px;">
+													<p:inputText class="textoMaior" value="#{ServerBean.servidor.hostname}" 
+														required="true"/>
+														
+													<p:inputText class="textoMenor"  value="#{ServerBean.servidor.porta}"/>
+												</div>											
+											</div>
+										</section>
+									</section>		
+								</div>							
+							</div>				
+						</div>
+					</div>
+				</div>
+			</div>
+		</h:form>
+	</ui:define>
+</ui:composition>
