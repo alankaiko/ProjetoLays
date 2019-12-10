@@ -20,7 +20,7 @@
 					<div>
 						<p:toolbar>
 				            <p:toolbarGroup>
-				                <p:button value="Novo" icon="fa fa-fw fa-plus" outcome="/dicons/OpcoesServer"/>
+				                <p:button value="Novo" icon="fa fa-fw fa-plus" outcome="/dicons/Server"/>
 					        </p:toolbarGroup>
 				            
 				            <p:toolbarGroup align="right">
@@ -48,7 +48,7 @@
 						</p:column>
 						
 						<p:column headerText="Opções" id="colunaExcluir" style="text-align: center; width: 8%">
-							<p:button icon="fa fa-fw fa-edit" title="Editar" outcome="/dicons/OpcoesServer">
+							<p:button icon="fa fa-fw fa-edit" title="Editar" outcome="/dicons/Server">
 								<f:param name="editaFuncionario" value="#{lista.id}"/>
 							</p:button>
 							
@@ -64,13 +64,13 @@
 		</h:form>
 		
 		
-		<p:confirmDialog header="Exclusão de Funcionário" widgetVar="confirmaExclusao" id="confirmaExclusaoDialog"
-			message="Tem certeza que deseja excluir o Funcionário #{MBFuncionario.funcionarioSelecionado.nome}" closeOnEscape="true">
+		<p:confirmDialog header="Exclusão de Server" widgetVar="confirmaExclusao" id="confirmaExclusaoDialog"
+			message="Tem certeza que deseja excluir o Server #{ServerConsBean.servidorSelecionado.titulo}" closeOnEscape="true">
 			<h:form>
 				<p:button value="Não" onclick="PF('confirmaExclusao').hide(); return false;"/>
 				
 				<p:commandButton value="Sim" oncomplete="PF('confirmaExclusao').hide();"
-					action="#{MBFuncionario.Excluir}" actionListener="#{MBFuncionario.Redirecionar}" process="@this" ajax="false"/>
+					action="#{ServerConsBean.Excluir}" actionListener="#{ServerConsBean.Redirecionar}" process="@this" ajax="false"/>
 			</h:form>
 		</p:confirmDialog>
 	</ui:define>

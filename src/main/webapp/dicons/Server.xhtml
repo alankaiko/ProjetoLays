@@ -13,7 +13,7 @@
 		<f:event listener="#{ServerBean.CarregarServidorEditar}" type="preRenderView"/>
 	</f:metadata>
 	
-	<ui:define name="titulo">Cadastrar Funcionários</ui:define>
+	<ui:define name="titulo">Cadastrar Servidores</ui:define>
 
 	<ui:define name="corpo">
 		<h:form id="formulario">
@@ -24,7 +24,7 @@
 					<div>
 						<p:toolbar>
 				            <p:toolbarGroup>
-				                <p:button value="Novo" icon="fa fa-fw fa-plus" outcome="/dicons/OpcoesServer"/>
+				                <p:button value="Novo" icon="fa fa-fw fa-plus" outcome="/dicons/Server"/>
 				                <p:commandButton value="Salvar" ajax="false" icon="fa fa-fw fa-save" 
 				                action="#{ServerBean.Salvando}" actionListener="#{ServerBean.Redirecionar}"/>  
 					        </p:toolbarGroup>
@@ -53,20 +53,37 @@
 													<p:inputText value="#{ServerBean.servidor.titulo}" required="true"/>
 												</div>
 											</div>
-											
+										
+										</section>	
+										
+										<section>
+									
 											<div style="width:90%;">
 												<div style="border-bottom: 1px solid #eeeeee;">
-													<p:outputLabel value="Hostname e Porta"/>
+													<p:outputLabel value="Hostname"/>
 												</div>											
 		
 												<div style="margin-top: 5px;">
 													<p:inputText class="textoMaior" value="#{ServerBean.servidor.hostname}" 
 														required="true"/>
-														
+													
+												</div>											
+											</div>
+										
+										</section>	
+										
+										<section>
+											<div style="width:90%;">
+												<div style="border-bottom: 1px solid #eeeeee;">
+													<p:outputLabel value="Porta"/>
+												</div>											
+		
+												<div style="margin-top: 5px;">
+													
 													<p:inputText class="textoMenor"  value="#{ServerBean.servidor.porta}"/>
 												</div>											
 											</div>
-										</section>
+										</section>	
 									</section>		
 								</div>							
 							</div>				

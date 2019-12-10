@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	template="/WEB-INF/templates/LayoutCadastro.xhtml">
+	
+	
+	<f:metadata>		
+		<f:viewAction action="#{TesteConBean.Inicializar}"/>
+	</f:metadata>
+	
+	<ui:define name="titulo">Cadastrar Usuários</ui:define>
+
+	<ui:define name="corpo">
+		<h:form id="formulario">
+			<p:messages autoUpdate="true" closable="true" />
+			
+			<div class="layout-content">
+				<div class="conteudo-principal">
+					<div>
+						<p:toolbar style="margin-top: 25px">
+				            <p:toolbarGroup>
+				                <p:commandButton value="Executar" ajax="false" process="@this"
+				                action="#{TesteConBean.Executar}" actionListener="#{MBCadUsuario.Redirecionar}"/>  
+					        </p:toolbarGroup>
+			   			</p:toolbar>  
+					</div>
+					
+					<h3>Executar Serv Teste</h3>
+					
+					<div class="divisoriaCad">
+							
+							<div class="divisoriaa">
+								<section class="divOutrasInformacoes">								
+									<section>	
+										<div style="width:40%;">
+											<div style="border-bottom: 1px solid #eeeeee;">
+												<p:outputLabel value="Paciente"/>
+											</div>											
+	
+											<div style="margin-top: 5px;">
+												<p:inputText value="#{TesteConBean.paciente.nome}" readonly="true"/>
+											</div>											
+										</div>
+																	
+										<div style="width:40%;">
+											<div style="border-bottom: 1px solid #eeeeee;">
+												<p:outputLabel value="CPF"/>								
+											</div>											
+	
+											<div style="margin-top: 5px;">
+												<p:inputText value="#{TesteConBean.paciente.cpf}" readonly="true"/>
+											</div>											
+										</div>
+										
+										
+										<div style="width:40%;">
+											<div style="border-bottom: 1px solid #eeeeee;">
+												<p:spacer/>		
+											</div>											
+	
+											<div style="margin-top: 5px;">
+												<p:commandButton value="Pesquisar" oncomplete="PF('confirmaPac').show()" 
+													process="@this" icon="fa fa-fw fa-search"/>
+											</div>											
+										</div>
+									</section>
+									
+									<p:separator/>
+									
+									<section>	
+										<div style="width:40%;">
+											<div style="border-bottom: 1px solid #eeeeee;">
+												<p:outputLabel value="Hostname"/>
+											</div>											
+	
+											<div style="margin-top: 5px;">
+												<p:inputText value="#{TesteConBean.servidor.hostname}" readonly="true"/>
+											</div>											
+										</div>
+																	
+										<div style="width:40%;">
+											<div style="border-bottom: 1px solid #eeeeee;">
+												<p:outputLabel value="Porta"/>								
+											</div>											
+	
+											<div style="margin-top: 5px;">
+												<p:inputText value="#{TesteConBean.servidor.porta}" readonly="true"/>
+											</div>		
+											
+											<div style="margin-top: 5px;">
+												<p:inputText value="#{TesteConBean.servidor.titulo}" readonly="true"/>
+											</div>										
+										</div>
+										
+										
+										<div style="width:40%;">
+											<div style="border-bottom: 1px solid #eeeeee;">
+												<p:spacer/>		
+											</div>											
+	
+											<div style="margin-top: 5px;">
+												<p:commandButton value="Pesquisar" oncomplete="PF('confirmaSer').show()" 
+													process="@this" icon="fa fa-fw fa-search"/>
+											</div>											
+										</div>
+									</section>
+								</section>
+							</div>							
+						</div>		
+					<div>
+					</div>
+				</div>
+			</div>
+		</h:form>
+		
+		
+		
+		<p:confirmDialog id="confirmaPaciente" widgetVar="confirmaPac" closeOnEscape="true">
+			<h:form >
+				<p:dataTable id="evento" var="item" value="#{TesteConBean.listaPaciente}"
+					selectionMode="single" selection="#{TesteConBean.paciente}" rowKey="#{item.id}">
+					
+					 <p:ajax event="rowSelect" listener="#{TesteConBean.PegaPaciente}" 
+					 	oncomplete="PF('confirmaPac').hide()" update=":formulario"/>
+					
+					<p:column headerText="Código" filterBy="#{item.id}" style="text-align: center; width: 12%">
+						<h:outputText value="#{item.id}"/>
+					</p:column>
+					
+					<p:column headerText="Nome" filterBy="#{item.nome}">
+						<h:outputText value="#{item.nome}"/>
+					</p:column>
+					
+					<p:column headerText="CPF" filterBy="#{item.cpf}" style="width: 15%">
+						<h:outputText value="#{item.cpf}"/>
+					</p:column>
+					
+					<p:column headerText="RG" filterBy="#{item.rg}" style="width: 15%">
+						<h:outputText value="#{item.rg}"/>
+					</p:column>
+				</p:dataTable>
+			</h:form>
+		</p:confirmDialog>
+		
+		<p:confirmDialog id="confirmaServidor" widgetVar="confirmaSer" closeOnEscape="true">
+			<h:form >
+				<p:dataTable id="evento" var="item" value="#{TesteConBean.listaServidor}"
+					selectionMode="single" selection="#{TesteConBean.servidor}" rowKey="#{item.id}">
+					
+					 <p:ajax event="rowSelect" listener="#{TesteConBean.PegaServidor}" 
+					 	oncomplete="PF('confirmaSer').hide()" update=":formulario"/>
+					
+					<p:column headerText="Código" filterBy="#{item.id}" style="text-align: center; width: 12%">
+						<h:outputText value="#{item.id}"/>
+					</p:column>
+					
+					<p:column headerText="Nome" filterBy="#{item.nome}">
+						<h:outputText value="#{item.hostname}"/>
+					</p:column>
+					
+					<p:column headerText="CPF" filterBy="#{item.cpf}" style="width: 15%">
+						<h:outputText value="#{item.porta}"/>
+					</p:column>
+					
+					<p:column headerText="RG" filterBy="#{item.rg}" style="width: 15%">
+						<h:outputText value="#{item.titulo}"/>
+					</p:column>
+				</p:dataTable>
+			</h:form>
+		</p:confirmDialog>
+	</ui:define>
+</ui:composition>
+

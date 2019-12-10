@@ -18,7 +18,7 @@ public class DicomCFindFunctionalityDemo {
              //query root of "study" to retrieve studies
 
              identifier.putNewAttribute(TagFromName.QueryRetrieveLevel).addValue("STUDY"); 
-             identifier.putNewAttribute(TagFromName.PatientName,specificCharacterSet).addValue("reacher*");
+             identifier.putNewAttribute(TagFromName.PatientName,specificCharacterSet).addValue("bowen*");
              identifier.putNewAttribute(TagFromName.PatientID,specificCharacterSet);
              identifier.putNewAttribute(TagFromName.PatientBirthDate);
              identifier.putNewAttribute(TagFromName.PatientSex);
@@ -27,10 +27,9 @@ public class DicomCFindFunctionalityDemo {
              identifier.putNewAttribute(TagFromName.StudyDescription);
              identifier.putNewAttribute(TagFromName.StudyDate);
              
+
              //retrieve all studies belonging to patient with name 'Bowen'
-             new FindSOPClassSCU("www.dicomserver.co.uk",
-                     104,
-                     "MEDCONNEC",
+             new FindSOPClassSCU("www.dicomserver.co.uk", 104, "MEDCONNEC",
                      "MYJAVACLIENT",
                      SOPClass.StudyRootQueryRetrieveInformationModelFind,identifier,
                      new IdentifierHandler(),

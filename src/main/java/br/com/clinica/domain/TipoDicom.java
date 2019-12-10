@@ -1,7 +1,7 @@
 package br.com.clinica.domain;
 
 public enum TipoDicom {
-	PACIENTE("Patienty"), ESTUDO("Study"), SERIE("Serie"), IMAGEM("Image");
+	PATIENT("PATIENT"), STUDY("STUDY"), SERIE("SERIE"), IMAGE("IMAGE");
 	
 	private String valor;
 	

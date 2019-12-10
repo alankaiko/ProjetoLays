@@ -14,8 +14,11 @@
 			<div class="box">
 				<h2>Visualizar	</h2>
 		        <div id="viewer-bar">
-		        <div style="float:left; margin: 5px">
+		        <div style="float:left; margin: 5px; display:flex">
 		        	<div id="open" class="tool-button">Selecionar</div>
+		        	<h:form id="formulario">
+		        		<p:commandButton value="Dicom Servidor" action="#{AtendDBean.Buscar}" ajax="false"></p:commandButton>
+		        	</h:form>
 		        </div>
 		        
 		        <div style="float: right; display: inline-flex; margin: 5px;">

@@ -17,7 +17,7 @@
 	
 	<context-param>
 		<param-name>primefaces.THEME</param-name>
-		<param-value>bluesky</param-value>
+		<param-value>delta</param-value>
 		<!-- delta ou bluesky ou flick ou bootstrap -->
 	</context-param>
 	
